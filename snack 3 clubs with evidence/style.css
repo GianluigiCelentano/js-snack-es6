@@ -6,6 +6,13 @@ ul {
     display: inline-block;
     list-style: none;
 }
+li:first-child {
+    font-weight: bold;
+    padding-top: 10px;
+}
 li:nth-child(3) {
     background-color: yellow;
+}
+li {
+    text-align: center;
 }
