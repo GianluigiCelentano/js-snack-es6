@@ -102,4 +102,4 @@ document.getElementById("table").innerHTML +=
 </ul>
 `
 }
-document.getElementById("best-penalties").innerHTML = (`La squadra che ha subito più falli è ${bestClubs} con ${bestPenalties}`)
+document.getElementById("best-penalties").innerHTML = (`La squadra che ha subito più falli è <span id="best-penalties">${bestClubs}</span> con ${bestPenalties}`)
