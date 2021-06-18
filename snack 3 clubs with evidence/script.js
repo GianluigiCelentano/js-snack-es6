@@ -80,6 +80,19 @@ let clubs = [
     }
 ]
 
+let bestPenalties = 0
+let bestClubs;
+for(let grs=0; grs < clubs.length; grs++) {
+
+    const {penalties,name} = clubs[grs]
+
+    if(penalties > bestPenalties) {
+        bestPenalties = penalties
+        bestClubs = name
+    }
+
+}
+
 document.getElementById("table").innerHTML += 
 `
 <ul>
@@ -104,3 +117,4 @@ document.getElementById("table").innerHTML +=
     <li>${clubs[2].penalties}</li>
 </ul>
 `
+document.getElementById("best-penalties").innerHTML = (`La squadra che ha subito più falli è ${bestClubs} con ${bestPenalties}`)
