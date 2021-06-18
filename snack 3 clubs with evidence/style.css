@@ -1,17 +1,14 @@
 .table {
     border: 1px solid black;
-    width: 360px;
+    width: 400px;
 }
 ul {
     display: inline-block;
     list-style: none;
 }
-li:first-child {
+li:nth-child(2n+1) {
     font-weight: bold;
     padding-top: 10px;
-}
-li:nth-child(3) {
-    background-color: yellow;
 }
 li {
     text-align: center;
