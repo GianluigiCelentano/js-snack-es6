@@ -1,12 +1,12 @@
 .table {
     border: 1px solid black;
-    width: 350px;
+    width: 400px;
 }
 ul {
     display: inline-block;
     list-style: none;
 }
-li:first-child {
+li:nth-child(3n+1) {
     font-weight: bold;
     padding-top: 10px;
 }

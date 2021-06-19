@@ -101,14 +101,18 @@ for (let stmp = 0; stmp < clubs.length; stmp++) {
     `
     <ul>
         <li> CLUB </li>
-        <hr>
         <li>${clubs[stmp].name}</li>
+        <hr>
+        <li> GOL </li>
         <li> ${clubs[stmp].gol}</li>
+        <hr>
+        <li> PENALTIES </li>
         <li>${clubs[stmp].penalties}</li>
+        <hr>
     </ul>
     `
     if(clubs[stmp].penalties===bestPenalties) {
-        document.getElementsByTagName("ul")[stmp].style.backgroundColor='yellow'
+        document.getElementsByTagName("ul")[stmp].style.color='red'
     }
 }
 
