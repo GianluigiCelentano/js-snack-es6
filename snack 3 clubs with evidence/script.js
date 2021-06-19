@@ -111,6 +111,8 @@ for (let stmp = 0; stmp < clubs.length; stmp++) {
         <hr>
     </ul>
     `
+    // se tra i falli del nuovo for c'è un valore che corrisponde
+    // al record del primo for, mi deve stampare quel valore in rosso
     if(clubs[stmp].penalties===bestPenalties) {
         document.getElementsByTagName("ul")[stmp].style.color='red'
     }
