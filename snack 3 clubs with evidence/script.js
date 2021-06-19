@@ -61,6 +61,8 @@
 // const {name} = nameBicycle
 
 // console.log(`la bici più leggera è ${name} con ${weightBicycle} kg`)
+// in un for capisco qual'è la squadra con più falli, col secondo for li metto 
+// a confronto 
 
 let clubs = [
     {
@@ -80,39 +82,34 @@ let clubs = [
     }
 ]
 
+let bestGol = 0
 let bestPenalties = 0
 let bestClubs;
 for(let grs=0; grs < clubs.length; grs++) {
 
-    const {penalties,name} = clubs[grs]
+    const {penalties,name, gol} = clubs[grs]
 
     if(penalties > bestPenalties) {
         bestPenalties = penalties
         bestClubs = name
+        bestGol = gol
     }
 }
-document.getElementById("table").innerHTML += 
-`
-<ul>
-    <li> CLUB </li>
-    <hr>
-    <li>${clubs[0].name}</li>
-    <li> ${clubs[1].name}</li>
-    <li>${clubs[2].name}</li>
-</ul>
-<ul>
-    <li> GOL </li>
-    <hr>
-    <li>${clubs[0].gol}</li>
-    <li> ${clubs[1].gol}</li>
-    <li>${clubs[2].gol}</li>
-</ul>
-<ul>
-    <li> PENALTIES </li>
-    <hr>
-    <li>${clubs[0].penalties}</li>
-    <li> ${clubs[1].penalties}</li>
-    <li>${clubs[2].penalties}</li>
-</ul>
-`
+
+for (let stmp = 0; stmp < clubs.length; stmp++) {
+    document.getElementById("table").innerHTML += 
+    `
+    <ul>
+        <li> CLUB </li>
+        <hr>
+        <li>${clubs[stmp].name}</li>
+        <li> ${clubs[stmp].gol}</li>
+        <li>${clubs[stmp].penalties}</li>
+    </ul>
+    `
+    if(clubs[stmp].penalties===bestPenalties) {
+        document.getElementsByTagName("ul")[stmp].style.backgroundColor='yellow'
+    }
+}
+
 document.getElementById("best-penalties").innerHTML = (`La squadra che ha subito più falli è ${bestClubs} con ${bestPenalties}`)
